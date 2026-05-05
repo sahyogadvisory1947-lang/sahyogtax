@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Expert GST registration, business registration, trademark, tax consultation and compliance services. Talk to our expert on WhatsApp now."/>
+  <!-- Google Ads conversion tracking placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script> -->
+  <title>Trusted Business & Compliance Services | Sahyog Tax Finance Advisory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --ink:    #0a0f1a;
+      --ink2:   #1c2a40;
+      --gold:   #d4a017;
+      --gold2:  #f0bc2e;
+      --sage:   #e8f0e9;
+      --paper:  #faf8f4;
+      --white:  #ffffff;
+      --dim:    #5c6b7a;
+      --line:   rgba(10,15,26,.1);
+      --green:  #22c55e;
+      --green2: #16a34a;
+      --r:      10px;
+      --font-h: 'Syne', sans-serif;
+      --font-b: 'Instrument Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--paper); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--ink);
+      color: rgba(255,255,255,.65);
+      font-size: .72rem;
+      font-family: var(--font-b);
+      letter-spacing: .06em;
+      text-align: center;
+      padding: 8px 4vw;
+      line-height: 1.5;
+    }
+    .trust-bar strong { color: var(--gold2); font-weight: 600; }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 300;
+      box-shadow: 0 1px 20px rgba(10,15,26,.06);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; }
+    .nav-logo {
+      width: 40px; height: 40px;
+      background: var(--ink);
+      border-radius: 9px;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .nav-logo svg { width: 22px; height: 22px; }
+    .nav-name h1 { font-family: var(--font-h); font-size: .95rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .nav-name span { font-size: .63rem; color: var(--dim); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* ── WA BUTTON (reused) ── */
+    .wa {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green);
+      color: #fff !important;
+      font-family: var(--font-b);
+      font-weight: 600;
+      text-decoration: none !important;
+      border-radius: 50px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+    }
+    .wa:hover { background: var(--green2); transform: translateY(-1px); }
+    .wa svg { flex-shrink: 0; }
+    .wa-sm  { font-size: .82rem; padding: 9px 18px; box-shadow: 0 3px 14px rgba(34,197,94,.3); }
+    .wa-md  { font-size: .92rem; padding: 12px 24px; box-shadow: 0 4px 18px rgba(34,197,94,.32); }
+    .wa-lg  { font-size: 1.05rem; padding: 15px 32px; box-shadow: 0 6px 24px rgba(34,197,94,.38); }
+    .wa-xl  { font-size: 1.12rem; padding: 17px 36px; box-shadow: 0 8px 30px rgba(34,197,94,.42); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      padding: 72px 5vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* geometric accent */
+    .hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -80px;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      border: 80px solid rgba(212,160,23,.08);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: 30%;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,160,23,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 680px; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 1px solid rgba(212,160,23,.4);
+      background: rgba(212,160,23,.1);
+      color: var(--gold2);
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero-pill .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--gold2); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+
+    .hero-h { font-family: var(--font-h); font-size: clamp(2.1rem, 5.5vw, 3.5rem); font-weight: 800; color: var(--white); line-height: 1.12; margin-bottom: 18px; }
+    .hero-h em { font-style: normal; color: var(--gold2); }
+    .hero-sub { color: rgba(255,255,255,.65); font-size: 1rem; line-height: 1.72; max-width: 480px; margin-bottom: 36px; font-weight: 300; }
+
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 52px; }
+    .hero-ghost {
+      color: rgba(255,255,255,.7);
+      font-size: .88rem; font-weight: 500;
+      padding: 12px 22px; border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,.2);
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+      font-family: var(--font-b);
+    }
+    .hero-ghost:hover { border-color: var(--gold2); color: var(--gold2); }
+
+    /* trust numbers */
+    .hero-nums { display: flex; gap: 0; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px; }
+    .hnum { padding: 0 32px 0 0; margin-right: 32px; border-right: 1px solid rgba(255,255,255,.1); }
+    .hnum:last-child { border: none; padding: 0; margin: 0; }
+    .hnum-val { font-family: var(--font-h); font-size: 2rem; font-weight: 800; color: var(--gold2); line-height: 1; }
+    .hnum-lbl { font-size: .68rem; color: rgba(255,255,255,.45); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+
+    /* ── SECTION BASE ── */
+    .sec { padding: 72px 5vw; }
+    .sec-white { background: var(--white); }
+    .sec-paper { background: var(--paper); }
+    .sec-ink   { background: var(--ink); }
+    .sec-sage  { background: var(--sage); }
+
+    .tag { display: inline-block; font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .h2  { font-family: var(--font-h); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .h2-white { color: var(--white); }
+    .lead { color: var(--dim); font-size: .96rem; line-height: 1.72; max-width: 520px; font-weight: 300; }
+    .sec-hd { margin-bottom: 48px; }
+
+    /* ── SERVICES GRID ── */
+    .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
+    .svc-card {
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: var(--r);
+      padding: 28px 24px;
+      position: relative;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      overflow: hidden;
+    }
+    .svc-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      height: 3px; width: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .25s ease;
+    }
+    .svc-card:hover { border-color: rgba(212,160,23,.3); box-shadow: 0 10px 40px rgba(10,15,26,.08); transform: translateY(-3px); }
+    .svc-card:hover::after { transform: scaleX(1); }
+    .svc-ico {
+      width: 46px; height: 46px;
+      background: var(--ink);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      margin-bottom: 16px;
+    }
+    .svc-ico svg { width: 22px; height: 22px; }
+    .svc-card h3 { font-family: var(--font-h); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+    .svc-card p  { font-size: .84rem; color: var(--dim); line-height: 1.62; font-weight: 300; }
+
+    /* ── MID CTA BAND ── */
+    .mid-cta {
+      background: linear-gradient(135deg, #0f7a3a 0%, #145e2e 100%);
+      padding: 48px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .mid-cta-text h3 { font-family: var(--font-h); font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .mid-cta-text p  { color: rgba(255,255,255,.7); font-size: .9rem; font-weight: 300; }
+    .mid-cta .wa { background: var(--white); color: var(--green2) !important; font-weight: 700; }
+    .mid-cta .wa svg path { fill: var(--green2); }
+    .mid-cta .wa:hover { background: rgba(255,255,255,.9); transform: translateY(-1px); }
+
+    /* ── WHY CARDS ── */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 26px 22px;
+      border: 1.5px solid var(--line);
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .why-card:hover { box-shadow: 0 8px 30px rgba(10,15,26,.08); transform: translateY(-2px); }
+    .why-num {
+      font-family: var(--font-h);
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--gold2); line-height: 1;
+      min-width: 32px;
+    }
+    .why-body h4 { font-size: .92rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; font-family: var(--font-h); }
+    .why-body p  { font-size: .81rem; color: var(--dim); line-height: 1.6; font-weight: 300; }
+
+    /* ── PROCESS ── */
+    .process-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+    .process-row::before {
+      content: '';
+      position: absolute;
+      top: 38px; left: 15%; right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold2) 100%);
+      z-index: 0;
+    }
+    .proc-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .proc-circle {
+      width: 68px; height: 68px;
+      background: var(--ink);
+      border: 3px solid var(--gold2);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      margin: 0 auto 20px;
+      font-family: var(--font-h);
+      font-size: 1.4rem; font-weight: 800;
+      color: var(--gold2);
+    }
+    .proc-step h4 { font-family: var(--font-h); font-size: .95rem; font-weight: 700; color: var(--ink); margin-bottom: 7px; }
+    .proc-step p  { font-size: .82rem; color: var(--dim); line-height: 1.6; font-weight: 300; }
+
+    /* ── ABOUT ── */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(212,160,23,.1);
+      border: 1px solid rgba(212,160,23,.3);
+      color: #a07010;
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 50px;
+    }
+    .about-card {
+      background: var(--ink);
+      border-radius: 16px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,160,23,.15) 0%, transparent 70%);
+    }
+    .about-card h3 { font-family: var(--font-h); font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.3; }
+    .about-card p  { color: rgba(255,255,255,.6); font-size: .88rem; line-height: 1.72; font-weight: 300; margin-bottom: 24px; }
+    .about-list { list-style: none; }
+    .about-list li { font-size: .84rem; color: rgba(255,255,255,.7); padding: 7px 0; padding-left: 18px; position: relative; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .about-list li:last-child { border: none; }
+    .about-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold2); font-size: .6rem; top: 9px; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .contact-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r);
+      padding: 24px 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .contact-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(212,160,23,.15);
+      border-radius: 9px;
+      display: grid; place-items: center;
+    }
+    .contact-icon svg { width: 20px; height: 20px; }
+    .contact-card h4 { font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 5px; }
+    .contact-card p, .contact-card a { font-size: .9rem; color: rgba(255,255,255,.85); font-weight: 400; text-decoration: none; line-height: 1.5; }
+    .contact-card a:hover { color: var(--gold2); }
+    .contact-note { font-size: .78rem; color: rgba(255,255,255,.35); font-style: italic; margin-top: 4px; display: block; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--paper);
+      padding: 80px 5vw;
+      text-align: center;
+    }
+    .final-cta h2 { font-family: var(--font-h); font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--ink); margin-bottom: 14px; }
+    .final-cta p  { color: var(--dim); font-size: .98rem; margin-bottom: 36px; font-weight: 300; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: #f0ece4;
+      border-top: 1px solid rgba(10,15,26,.08);
+      padding: 14px 5vw;
+      text-align: center;
+    }
+    .disclaimer p { font-size: .72rem; color: #7a7060; line-height: 1.65; }
+    .disclaimer a { color: var(--gold); text-decoration: none; }
+    .disclaimer a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 32px 5vw 20px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 20px;
+    }
+    .footer-brand h3 { font-family: var(--font-h); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+    .footer-brand p  { font-size: .75rem; color: rgba(255,255,255,.4); line-height: 1.6; max-width: 280px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; font-weight: 500; }
+    .footer-links a:hover { color: var(--gold2); }
+    .footer-links span { color: rgba(255,255,255,.2); }
+    .footer-bottom { text-align: center; font-size: .72rem; color: rgba(255,255,255,.3); line-height: 1.8; }
+    .footer-bottom strong { color: rgba(255,255,255,.6); }
+
+    /* ── FLOAT WA BUTTON ── */
+    .float-wa {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #fff !important;
+      text-decoration: none !important;
+      padding: 13px 20px;
+      border-radius: 50px;
+      font-family: var(--font-b);
+      font-size: .88rem; font-weight: 600;
+      box-shadow: 0 6px 28px rgba(34,197,94,.5);
+      transition: transform .2s, box-shadow .2s;
+      animation: floatIn .6s ease .8s both;
+    }
+    @keyframes floatIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+    .float-wa:hover { transform: scale(1.04); box-shadow: 0 8px 36px rgba(34,197,94,.6); }
+    .float-wa svg { flex-shrink: 0; }
+
+    /* ── REVEAL ── */
+    .r { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .r.v { opacity: 1; transform: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 700px) {
+      .nav { padding: 11px 4vw; }
+      .nav-name h1 { font-size: .82rem; }
+      .nav-name span { display: none; }
+      .hero { padding: 52px 5vw 60px; }
+      .hero-nums { gap: 20px; }
+      .hnum { border: none; padding: 0; margin: 0; }
+      .sec { padding: 52px 5vw; }
+      .about-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .process-row::before { display: none; }
+      .mid-cta { flex-direction: column; text-align: center; }
+      .mid-cta .wa { margin: 0 auto; }
+      .footer-top { flex-direction: column; }
+      .final-cta { padding: 60px 5vw; }
+      .float-wa span { display: none; }
+      .float-wa { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <strong>Sahyog Tax Finance Advisory Limited</strong> &nbsp;·&nbsp; MCA Registered Public Limited Company &nbsp;·&nbsp; Established 2007
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <div class="nav-name">
+      <h1>Sahyog Tax Finance Advisory</h1>
+      <span>Public Limited · MCA Registered · Est. 2007</span>
+    </div>
+  </div>
+  <a class="wa wa-sm" href="https://wa.link/fi7874" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Talk to Expert
+  </a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-pill"><span class="pulse"></span>Trusted Since 2007</div>
+    <h2 class="hero-h">Trusted <em>Business &amp; Compliance</em> Services</h2>
+    <p class="hero-sub">Expert support for GST, business registration, and compliance services for individuals and businesses across India.</p>
+    <div class="hero-cta">
+      <a class="wa wa-lg" href="https://wa.link/fi7874" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Talk to Expert on WhatsApp
+      </a>
+      <a class="hero-ghost" href="#services">View Services ↓</a>
+    </div>
+    <div class="hero-nums">
+      <div class="hnum"><div class="hnum-val">17+</div><div class="hnum-lbl">Years Experience</div></div>
+      <div class="hnum"><div class="hnum-val">MCA</div><div class="hnum-lbl">Registered</div></div>
+      <div class="hnum"><div class="hnum-val">2007</div><div class="hnum-lbl">Est. Year</div></div>
+      <div class="hnum"><div class="hnum-val">100%</div><div class="hnum-lbl">Compliance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services" class="sec sec-white">
+  <div class="sec-hd r">
+    <span class="tag">Services &amp; Expertise</span>
+    <h2 class="h2">We Offer a Wide Range of Professional Services</h2>
+    <p class="lead">End-to-end compliance and business services — accurate, timely, and fully supported.</p>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card r">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/>
+        </svg>
+      </div>
+      <h3>GST Registration &amp; Return Filing</h3>
+      <p>New GST registration, amendments, monthly/quarterly returns (GSTR-1, 3B, 9), and refund applications.</p>
+    </div>
+
+    <div class="svc-card r">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+        </svg>
+      </div>
+      <h3>Business Registration (Pvt Ltd, LLP, OPC)</h3>
+      <p>Complete company formation services — Private Limited, LLP, OPC, and ROC compliance filings.</p>
+    </div>
+
+    <div class="svc-card r">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+      <h3>Trademark Registration</h3>
+      <p>Protect your brand with trademark filing, objection handling, and complete IP registration support.</p>
+    </div>
+
+    <div class="svc-card r">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>
+        </svg>
+      </div>
+      <h3>Tax Consultation &amp; Compliance Support</h3>
+      <p>Income Tax filing, tax planning, notice handling, and complete compliance advisory for all taxpayers.</p>
+    </div>
+
+    <div class="svc-card r">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+        </svg>
+      </div>
+      <h3>TDS &amp; Accounting Services</h3>
+      <p>TDS computation and filings, bookkeeping, financial statements, and MIS reporting for businesses.</p>
+    </div>
+
+    <div class="svc-card r">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>
+        </svg>
+      </div>
+      <h3>MSME (Udyam) Registration</h3>
+      <p>Quick and accurate MSME/Udyam registration to unlock government benefits and credit facilities.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MID CTA (WhatsApp #2) ══ -->
+<div class="mid-cta">
+  <div class="mid-cta-text r">
+    <h3>Have a Question? Get Instant Expert Guidance</h3>
+    <p>Our team is available on WhatsApp — share your requirement and get quick support.</p>
+  </div>
+  <a class="wa wa-md r" href="https://wa.link/fi7874" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Talk to Expert on WhatsApp
+  </a>
+</div>
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section id="why" class="sec sec-paper">
+  <div class="sec-hd r">
+    <span class="tag">Why Choose Us</span>
+    <h2 class="h2">Why Businesses &amp; Individuals Trust Us</h2>
+    <p class="lead">A public limited company with 17+ years of experience — built on reliability, transparency, and results.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card r">
+      <div class="why-num">01</div>
+      <div class="why-body">
+        <h4>Experienced Professionals</h4>
+        <p>Our qualified team brings years of practical expertise in GST, taxation, and business compliance.</p>
+      </div>
+    </div>
+    <div class="why-card r">
+      <div class="why-num">02</div>
+      <div class="why-body">
+        <h4>Quick &amp; Reliable Service</h4>
+        <p>Fast turnarounds and zero missed deadlines — so you stay compliant without the stress.</p>
+      </div>
+    </div>
+    <div class="why-card r">
+      <div class="why-num">03</div>
+      <div class="why-body">
+        <h4>Transparent Process</h4>
+        <p>Clear communication, upfront pricing, and no hidden charges at any stage of your service.</p>
+      </div>
+    </div>
+    <div class="why-card r">
+      <div class="why-num">04</div>
+      <div class="why-body">
+        <h4>Support for Businesses &amp; Individuals</h4>
+        <p>Whether you're a startup, SME, or individual — we tailor our services to your specific needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section id="process" class="sec sec-white">
+  <div class="sec-hd r">
+    <span class="tag">Our Process</span>
+    <h2 class="h2">Get Started in 3 Simple Steps</h2>
+    <p class="lead">No complicated forms, no office visits — connect with us on WhatsApp and we handle the rest.</p>
+  </div>
+  <div class="process-row">
+    <div class="proc-step r">
+      <div class="proc-circle">1</div>
+      <h4>Connect with Us on WhatsApp</h4>
+      <p>Tap the WhatsApp button and connect with our expert team instantly.</p>
+    </div>
+    <div class="proc-step r">
+      <div class="proc-circle">2</div>
+      <h4>Share Your Requirement</h4>
+      <p>Tell us what you need — GST, registration, trademark, or any compliance service.</p>
+    </div>
+    <div class="proc-step r">
+      <div class="proc-circle">3</div>
+      <h4>Get Expert Guidance &amp; Quick Support</h4>
+      <p>Our team responds promptly and delivers end-to-end assistance until completion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about" class="sec sec-sage">
+  <div class="about-wrap">
+    <div class="r">
+      <span class="tag">About Us</span>
+      <h2 class="h2">Professional Services Built on Accuracy &amp; Trust</h2>
+      <p class="lead" style="max-width:100%">We provide professional business and compliance services with a focus on accuracy, reliability, and timely delivery. Our team ensures smooth processing and complete support for all your requirements.</p>
+      <div class="about-badges">
+        <span class="badge">✦ MCA Registered</span>
+        <span class="badge">✦ Est. 2007</span>
+        <span class="badge">✦ Public Limited Co.</span>
+        <span class="badge">✦ 17+ Years Trust</span>
+      </div>
+    </div>
+    <div class="about-card r">
+      <h3>What Sets Us Apart</h3>
+      <p>From a single freelancer's ITR to a company's full compliance stack — we serve them all with equal dedication.</p>
+      <ul class="about-list">
+        <li>GST, ITR, TDS — complete tax compliance</li>
+        <li>Company & LLP registration experts</li>
+        <li>Trademark & IP protection services</li>
+        <li>MSME / Udyam registration support</li>
+        <li>Quick WhatsApp-based communication</li>
+        <li>Confidential & secure handling of data</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="sec sec-ink">
+  <div class="sec-hd r">
+    <span class="tag" style="color:var(--gold2)">Contact Information</span>
+    <h2 class="h2 h2-white">Get in Touch With Us</h2>
+    <p class="lead" style="color:rgba(255,255,255,.55)">Reach out through WhatsApp or any of the channels below — we're here to help.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card r">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <p>India</p>
+        <span class="contact-note">Update with your office address</span>
+      </div>
+    </div>
+    <div class="contact-card r">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+        </svg>
+      </div>
+      <div>
+        <h4>Phone / WhatsApp</h4>
+        <a href="https://wa.link/fi7874">Chat on WhatsApp →</a>
+        <span class="contact-note">Update with your phone number</span>
+      </div>
+    </div>
+    <div class="contact-card r">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div>
+        <h4>Email</h4>
+        <p>info@sahiyog.in</p>
+        <span class="contact-note">Update with your email address</span>
+      </div>
+    </div>
+    <div class="contact-card r">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+      <div>
+        <h4>Business Hours</h4>
+        <p>Mon – Sat: 10am – 7pm</p>
+        <span class="contact-note">WhatsApp available extended hours</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA (WhatsApp #3) ══ -->
+<section class="final-cta">
+  <span class="tag r">Get Started Today</span>
+  <h2 class="r">Need Help with Business or Compliance Services?</h2>
+  <p class="r">Chat with our expert team on WhatsApp now — quick response, reliable support, and professional guidance.</p>
+  <a class="wa wa-xl r" href="https://wa.link/fi7874" target="_blank" rel="noopener">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    👉 Chat with Expert on WhatsApp Now
+  </a>
+</section>
+
+<!-- ══ DISCLAIMER ══ -->
+<div class="disclaimer">
+  <p>
+    <strong>Disclaimer:</strong>
+    <a href="https://sahiyog.in" target="_blank" rel="noopener">Sahiyog.in</a> is a private consultancy service provider and is not affiliated with any government authority or department. All trademarks belong to their respective owners.
+  </p>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Sahyog Tax Finance Advisory Limited</h3>
+      <p>MCA Registered Public Limited Company · Established 2007 · Providing professional business &amp; compliance services across India.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <span>·</span>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+      <span>·</span>
+      <a href="https://wa.link/fi7874" target="_blank" rel="noopener">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <strong>© 2025 Sahyog Tax Finance Advisory Limited.</strong> All Rights Reserved.<br>
+    Registered with Ministry of Corporate Affairs, Government of India.
+  </div>
+</footer>
+
+<!-- ══ FLOATING WA BUTTON ══ -->
+<a class="float-wa" href="https://wa.link/fi7874" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Talk to Expert</span>
+</a>
+
+<script>
+  /* scroll reveal */
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('v'); obs.unobserve(e.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.r').forEach(function(el){ obs.observe(el); });
+</script>
+</body>
+</html>
